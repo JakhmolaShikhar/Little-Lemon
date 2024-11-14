@@ -1,13 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <div>
-      <meta name='og:title' content='' />
-      <meta name='og:description' content='' />
-      <meta name='og:image' content='./assets/Logo.svg' />
+      { /*
+        <meta name='og:title' content='' />
+        <meta name='og:description' content='' />
+        <meta name='og:image' content='./assets/Logo.svg' /> */
+      }
+      
       <ul>
         <li>Home</li>
         <li>About</li>
