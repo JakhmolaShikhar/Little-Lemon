@@ -6,11 +6,11 @@ const Main = () => {
 	
   return (
     <div>
-			<main>
-				<section>
-					<h1>Welcome to Little Lemon</h1>
-					<p>Enjoy our special dishes and best hospitality.</p>
-				</section>
+		<main>
+			<section>
+				<h1>Welcome to Little Lemon</h1>
+				<p>Enjoy our special dishes and best hospitality.</p>
+			</section>
     	</main>
 		</div>
   )

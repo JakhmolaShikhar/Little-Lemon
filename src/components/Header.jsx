@@ -4,7 +4,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-        <img src="./assets/Logo.svg" alt='Little lemon logo' />
+        <img src="assets/Logo.svg" alt='Little lemon logo' />
     </div>
   )
 }
