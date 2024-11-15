@@ -10,8 +10,10 @@ function App() {
     <>
     <h1>Hello World</h1>
       <Header />
-      <Navbar />
-      <Main />
+      <main>
+        <Navbar />
+        <Main />
+      </main>
       <Footer />
     </>
   )

@@ -6,7 +6,7 @@ const Footer = () => {
   const date = new Date();
   return (
     <footer>
-        <p>Copyright &copy; { date.getFullyear } Little Lemon. All rights reserved.</p>
+        <p>Copyright &copy; { date.getFullYear() } Little Lemon. All rights reserved.</p>
         <nav>
             <ul>
                 <li><a href="/privacy" />Privacy Policy</li>
