@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import {Router, Routes, Route } from 'react-router-dom'
+import Main from './Main'
+import Header from './Header'
 
 const Navbar = () => {
   return (
@@ -20,10 +22,12 @@ const Navbar = () => {
         <li>Order Online</li>
         <li>Login</li>
       </ul>
+      <Router>
         <Routes>
             <Route path='/' element={<Main />} ></Route>
-            <Route path='' element={<Footer />}></Route>
+            <Route path='/menu' element={<Header />}></Route>
         </Routes>
+        </Router>
     </div>
   )
 }
