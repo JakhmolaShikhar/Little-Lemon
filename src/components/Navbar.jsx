@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
 import {BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import Main from './Main'
+import Menu from './Menu'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -37,7 +37,7 @@ const Navbar = () => {
       </ul>
       <Routes>
         <Route path='/' element={<Main />} ></Route>
-        <Route path='/menu' element={<Header />}></Route>
+        <Route path='/menu' element={<Menu />}></Route>
         <Route path='/about' element={<Footer />} />
       </Routes>
       </BrowserRouter>
