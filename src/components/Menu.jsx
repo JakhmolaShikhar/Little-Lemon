@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import { Search } from 'lucide-react'
 
 const Menu = () => {
 	const [availableTimes, setAvailableTimes] = useState('');
+	const [activeCategory, setActiveCategory] = useState('all');
 	
 	const categories = [
 		{id: 'all', name: 'ALL'},
@@ -50,6 +52,11 @@ const Menu = () => {
   return (
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
 		<h2 className='text-gray-800 text-3xl font-bold'>Our Menu</h2>
+
+		<div className='mb-2 p-4 relative'>
+			<Search className='absolute left-3 ' />
+
+		</div>
 	</div>
   )
 }
