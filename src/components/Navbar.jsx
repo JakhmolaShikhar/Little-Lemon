@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
-import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Main from './Main'
 import Header from './Header'
+import Footer from './Footer'
 
 const Navbar = () => {
   return (
@@ -13,21 +14,33 @@ const Navbar = () => {
         <meta name='og:description' content='' />
         <meta name='og:image' content='./assets/Logo.svg' /> */
       }
-      
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Menu</li>
-        <li>Reservations</li>
-        <li>Order Online</li>
-        <li>Login</li>
-      </ul>
       <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<Main />} ></Route>
-            <Route path='/menu' element={<Header />}></Route>
-        </Routes>
-        </BrowserRouter>
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/about'>About</Link>
+        </li>
+        <li>
+          <Link to='/menu'>Menu</Link>
+        </li>
+        <li>
+          <Link to='/reservation'>Reservations</Link>
+        </li>
+        <li>
+          <Link to='/order'>Order Online</Link>
+        </li>
+        <li>
+          <Link to='/login'>Login</Link>
+        </li>
+      </ul>
+      <Routes>
+        <Route path='/' element={<Main />} ></Route>
+        <Route path='/menu' element={<Header />}></Route>
+        <Route path='/about' element={<Footer />} />
+      </Routes>
+      </BrowserRouter>
     </div>
   )
 }
