@@ -45,15 +45,12 @@ const Menu = () => {
       		category: 'desserts',
 		},
 	]
+
+
   return (
-    <div>
-		<main>
-			<section>
-				<h1>Welcome to Little Lemon</h1>
-				<p>Enjoy our special dishes and best hospitality.</p>
-			</section>
-    	</main>
-		</div>
+    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
+		<h2 className='text-gray-800 text-3xl font-bold'>Our Menu</h2>
+	</div>
   )
 }
 

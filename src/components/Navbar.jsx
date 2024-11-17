@@ -36,7 +36,7 @@ const Navbar = () => {
         </li>
       </ul>
       <Routes>
-        <Route path='/' element={<Main />} ></Route>
+        <Route path='/' element={<Header />} ></Route>
         <Route path='/menu' element={<Menu />}></Route>
         <Route path='/about' element={<Footer />} />
       </Routes>
