@@ -65,8 +65,9 @@ const Menu = () => {
 				<Search className='absolute left-3 top-1/2 text-gray-400 transform -translate-y-1/2' />
 				<input 
 				type='text'
-				value=''
+				value={searchquery}
 				placeholder='Search Menu'
+				onChange={(e) => setSearchQuery(e.target.value)}
 				className='w-full pl-10 pr-4 py-2 border rounded-md'
 				/>
 			</div>
@@ -76,10 +77,14 @@ const Menu = () => {
 			{categories.map((category) => (
 				<button
 				key={category.id}
-				className='' 
-				/>
-			)	
-			)}
+				onClick={() => setActiveCategory(category.id)}
+				className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+					${activeCategory === category.id ? 'bg-yellow-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }
+					`} 
+				>
+					{category.name}
+				</button>
+			))}
 			
 		</div>
 
