@@ -91,11 +91,11 @@ const Menu = () => {
 			{filteredItems.map((item) => (
 				<div
 				key={item.id}
-				className='border rounded-lg overflow-hidden'
+				className='border rounded-lg overflow-hidden hover:shadow-lg transition-shadow'
 				>
-					<div>
+					<div className='aspect-w-16 aspect-h-9 bg-gray-200'>
 						<img 
-						src=''
+						src='/api/placeholder/400/225'
 						alt={item.name}
 						className='object-cover w-full h-full'
 						/>
@@ -103,7 +103,7 @@ const Menu = () => {
 					<div className='p-4'>
 						<div className='flex justify-between items-start mb-2'>
 							<h3 className='text-lg font-bold'>{item.name}</h3>
-							<span className='text-yellow-300 font-semibold'>${item.price}</span>
+							<span className='text-yellow-600 font-semibold'>${item.price}</span>
 						</div>
 						<p className='text-sm text-green-800 mb-4'>{item.description}</p>
 						{item.special && (
