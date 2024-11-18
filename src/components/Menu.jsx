@@ -48,7 +48,7 @@ const Menu = () => {
       		category: 'desserts',
 		},
 	]
-	
+
 	const filteredItems = menuItems.filter(item => {
 		const matchCategory = activeCategory === 'all' || item.category === activeCategory;
 		const matchSearch = item.name.toLowerCase().includes(searchquery.toLowerCase()) ||
@@ -71,6 +71,18 @@ const Menu = () => {
 				/>
 			</div>
 		</div>
+
+		<div className='flex flex-wrap gap-3'>
+			{categories.map((category) => (
+				<button
+				key={category.id}
+				className='' 
+				/>
+			)	
+			)}
+			
+		</div>
+
 	</div>
   )
 }
