@@ -5,7 +5,8 @@ import { Search } from 'lucide-react'
 const Menu = () => {
 	const [availableTimes, setAvailableTimes] = useState('');
 	const [activeCategory, setActiveCategory] = useState('all');
-	
+	const [searchquery, setSearchQuery] = useState('');
+
 	const categories = [
 		{id: 'all', name: 'ALL'},
 		{id: 'starters', name: 'Starters'},
@@ -47,15 +48,28 @@ const Menu = () => {
       		category: 'desserts',
 		},
 	]
-
+	
+	const filteredItems = menuItems.filter(item => {
+		const matchCategory = activeCategory === 'all' || item.category === activeCategory;
+		const matchSearch = item.name.toLowerCase().includes(searchquery.toLowerCase()) ||
+												item.description.toLowerCase().includes(searchquery.toLowerCase());
+		return matchCategory && matchSearch;
+	})
 
   return (
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
 		<h2 className='text-gray-800 text-3xl font-bold'>Our Menu</h2>
 
-		<div className='mb-2 p-4 relative'>
-			<Search className='absolute left-3 ' />
-
+		<div className='mb-8 space-y-4'>
+			<div className=' relative'>
+				<Search className='absolute left-3 top-1/2 text-gray-400 transform -translate-y-1/2' />
+				<input 
+				type='text'
+				value=''
+				placeholder='Search Menu'
+				className='w-full pl-10 pr-4 py-2 border rounded-md'
+				/>
+			</div>
 		</div>
 	</div>
   )
