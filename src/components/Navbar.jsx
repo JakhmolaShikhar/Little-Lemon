@@ -39,6 +39,7 @@ const Navbar = () => {
         <Route path='/' element={<Header />} ></Route>
         <Route path='/menu' element={<Menu />}></Route>
         <Route path='/about' element={<Footer />} />
+        <Route path='/order' element={<Menu />} />
       </Routes>
       </BrowserRouter>
     </div>
