@@ -21,16 +21,16 @@ const Menu = () => {
 			id: '1',
 			name: 'Greek salad',
 			description: 'Fresh vegetables, olives, and feta cheese with our house dressing',
-      		price: 12.99,
-      		category: 'starters',
-      		special: true,
+			price: 12.99,
+			category: 'starters',
+			special: true,
 		},
 		{
 			id: 2,
-      		name: 'Bruschetta',
-      		description: 'Grilled bread with tomatoes, garlic, and fresh basil',
-      		price: 9.99,
-      		category: 'starters',
+			name: 'Bruschetta',
+			description: 'Grilled bread with tomatoes, garlic, and fresh basil',
+			price: 9.99,
+			category: 'starters',
 		},
 		{
 			id: 3,
@@ -42,10 +42,10 @@ const Menu = () => {
 		},
 		{
 			id: 4,
-      		name: 'Lemon Dessert',
-      		description: 'Traditional Italian lemon cake with vanilla ice cream',
-      		price: 8.99,
-      		category: 'desserts',
+			name: 'Lemon Dessert',
+			description: 'Traditional Italian lemon cake with vanilla ice cream',
+			price: 8.99,
+			category: 'desserts',
 		},
 	]
 
@@ -97,21 +97,22 @@ const Menu = () => {
 						<img 
 						src=''
 						alt={item.name}
-						className=''
+						className='object-cover w-full h-full'
 						/>
 					</div>
 					<div className='p-4'>
-						<div className='flex'>
-							<h3 className=''>{item.name}</h3>
-							<span className=''>${item.price}</span>
+						<div className='flex justify-between items-start mb-2'>
+							<h3 className='text-lg font-bold'>{item.name}</h3>
+							<span className='text-yellow-300 font-semibold'>${item.price}</span>
 						</div>
-						<p className=''>{item.description}</p>
+						<p className='text-sm text-green-800 mb-4'>{item.description}</p>
+						{item.special && (
+							<span className='inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded'>Special</span>
+						)}
 					</div>
 				</div>
 			))}
 		</div>
-
-
 	</div>
   )
 }
