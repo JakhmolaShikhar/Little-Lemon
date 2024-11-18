@@ -71,22 +71,46 @@ const Menu = () => {
 				className='w-full pl-10 pr-4 py-2 border rounded-md'
 				/>
 			</div>
+			
+			<div className='flex flex-wrap gap-3'>
+				{categories.map((category) => (
+					<button
+					key={category.id}
+					onClick={() => setActiveCategory(category.id)}
+					className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+						${activeCategory === category.id ? 'bg-yellow-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }
+						`} 
+					>
+						{category.name}
+					</button>
+				))}
+			</div>
 		</div>
 
-		<div className='flex flex-wrap gap-3'>
-			{categories.map((category) => (
-				<button
-				key={category.id}
-				onClick={() => setActiveCategory(category.id)}
-				className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-					${activeCategory === category.id ? 'bg-yellow-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }
-					`} 
+		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+			{filteredItems.map((item) => (
+				<div
+				key={item.id}
+				className='border rounded-lg overflow-hidden'
 				>
-					{category.name}
-				</button>
+					<div>
+						<img 
+						src=''
+						alt={item.name}
+						className=''
+						/>
+					</div>
+					<div className='p-4'>
+						<div className='flex'>
+							<h3 className=''>{item.name}</h3>
+							<span className=''>${item.price}</span>
+						</div>
+						<p className=''>{item.description}</p>
+					</div>
+				</div>
 			))}
-			
 		</div>
+
 
 	</div>
   )
