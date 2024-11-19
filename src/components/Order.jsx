@@ -13,6 +13,11 @@ const Order = () => {
 			));
 		}
 	}
+
+	const removeCart = (itemID) => {
+		setCart(cart.filter(item => item.id !== itemID));
+	}
+
   return (
     <div>Order</div>
   )
