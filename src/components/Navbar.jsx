@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Menu from './Menu'
 import Header from './Header'
 import Footer from './Footer'
+import BookingForm from './BookingForm'
 
 const Navbar = () => {
   return (
@@ -40,6 +41,7 @@ const Navbar = () => {
         <Route path='/menu' element={<Menu />}></Route>
         <Route path='/about' element={<Footer />} />
         <Route path='/order' element={<Menu />} />
+        <Route path='/reservation' element={<BookingForm />} />
       </Routes>
       </BrowserRouter>
     </div>
