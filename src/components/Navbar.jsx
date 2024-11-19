@@ -15,7 +15,6 @@ const Navbar = () => {
         <meta name='og:description' content='' />
         <meta name='og:image' content='./assets/Logo.svg' /> */
       }
-      <BrowserRouter>
       <ul>
         <li>
           <Link to='/'>Home</Link>
@@ -36,14 +35,6 @@ const Navbar = () => {
           <Link to='/login'>Login</Link>
         </li>
       </ul>
-      <Routes>
-        <Route path='/' element={<Header />} ></Route>
-        <Route path='/menu' element={<Menu />}></Route>
-        <Route path='/about' element={<Footer />} />
-        <Route path='/order' element={<Menu />} />
-        <Route path='/reservation' element={<BookingForm />} />
-      </Routes>
-      </BrowserRouter>
     </div>
   )
 }
