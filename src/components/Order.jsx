@@ -15,8 +15,22 @@ const Order = () => {
 		}
 	}
 
-	const removeCart = (itemID) => {
+	const removeFromCart = (itemID) => {
 		setCart(cart.filter(item => item.id !== itemID));
+	}
+
+	const updateQuantity = (itemID, newQuantity) => {
+		if(newQuantity < 1){
+			removeFromCart(itemID);
+			return;
+		}
+		setCart(cart.map(item =>
+			item.id === itemID ? {...item, quantity: newQuantity} : item
+		))
+	}
+
+	const getTotalAmount = () => {
+		return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 	}
 
   return (
@@ -27,7 +41,7 @@ const Order = () => {
 			>
 				<ShoppingCart />
 				{cart.length > 0 && (
-					<span className='absolute'>
+					<span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs w-6 h-6'>
 						{cart.reduce((item, total) => total + item.quantity, 0)}
 					</span>
 				)}
