@@ -16,12 +16,13 @@ function App() {
         <main>
           <Navbar />
             <Routes>
-            <Route path='/' element={<Home />} ></Route>
+            <Route path='#' element={<Home />} ></Route>
             <Route path='/menu' element={<Menu />}></Route>
             <Route path='/about' element={<Footer />} />
             <Route path='/order' element={<Menu />} />
             <Route path='/reservation' element={<BookingForm />} />
             </Routes>
+            <Home />
           <Menu />
         </main>
         <Footer />
