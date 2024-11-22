@@ -20,35 +20,35 @@ const Navbar = () => {
           <li>
             <Link 
             to='/' 
-            className='text-gray-700 hover:text-yellow-300 transition duration-200'>
+            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               Home
             </Link>
           </li>
           <li>
             <Link 
             to='/about' 
-            className='text-gray-700 hover:text-yellow-300 transition duration-200'>
+            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               About
             </Link>
           </li>
           <li>
             <Link 
             to='/reservation' 
-            className='text-gray-700 hover:text-yellow-300 transition duration-200'>
+            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               Reservations
             </Link>
           </li>
           <li>
             <Link 
             to='/order' 
-            className='text-gray-700 hover:text-yellow-300 transition duration-200'>
+            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               Order Online
             </Link>
           </li>
           <li>
             <Link 
             to='/login' 
-            className='text-gray-700 hover:text-yellow-300 transition duration-200'>
+            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               Login
             </Link>
           </li>
