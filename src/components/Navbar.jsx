@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
-import React from 'react'
+import React, { useRef} from 'react'
 import {BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Menu from './Menu'
 import Header from './Header'
@@ -8,6 +8,12 @@ import Footer from './Footer'
 import BookingForm from './BookingForm'
 
 const Navbar = () => {
+  const footerRef = useRef(null);
+
+  const scrollDown = () => {
+    footerRef.current.scrollIntoView({ behavior: 'smooth'});
+  }
+
   return (
     <div className='bg-white shadow-md'>
       { /*
@@ -27,6 +33,7 @@ const Navbar = () => {
           <li>
             <Link 
             to='/about' 
+            onClick={scrollDown}
             className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               About
             </Link>

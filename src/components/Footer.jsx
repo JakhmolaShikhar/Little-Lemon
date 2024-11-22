@@ -2,7 +2,7 @@
 import React from 'react'
 
 const Footer = () => {
-    
+ 
   const date = new Date();
   return (
     <>
@@ -17,7 +17,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a href="/terms" className='text-gray-300 hover:text-white transition-colors' />
-                    Temrs & Conditions
+                    Terms & Conditions
                   </li>
               </ul>
           </nav>
