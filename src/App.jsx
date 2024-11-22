@@ -5,6 +5,7 @@ import Menu from './components/Menu'
 import Footer from './components/Footer'
 import BookingForm from './components/BookingForm'
 import Home from './components/Home'
+import Order from './components/Order'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -17,9 +18,8 @@ function App() {
           <Navbar />
             <Routes>
             <Route path='#' element={<Home />} ></Route>
-            <Route path='/menu' element={<Menu />}></Route>
-            <Route path='/about' element={<Footer />} />
-            <Route path='/order' element={<Menu />} />
+            <Route path='#about' element={<Footer />} />
+            <Route path='/order' element={<Order />} />
             <Route path='/reservation' element={<BookingForm />} />
             </Routes>
             <Home />
