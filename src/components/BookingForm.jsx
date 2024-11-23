@@ -5,11 +5,17 @@ const BookingForm = () => {
   
     return (
     <div>
-        <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+        <form className='space-y-6'>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" />
             <label htmlFor="res-time">Choose time</label>
-            <select id="res-time">
+            <select 
+            id="res-time"
+            required
+            className='w-full px-4 py-2 border rounded-md'
+            value={''}
+            >
+                <option value=''>Select time</option>
                 <option>17:00</option>
                 <option>18:00</option>
                 <option>19:00</option>
@@ -17,10 +23,13 @@ const BookingForm = () => {
                 <option>21:00</option>
                 <option>22:00</option>
             </select>
-            <label htmlFor="guests">Number of guests</label>
+            <label htmlFor="guests" className='block text-sm font-medium mb-1'>Number of guests</label>
             <input type="number" placeholder="1" min="1" max="10" id="guests" />
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion">
+            <select 
+            id="occasion"
+            className='w-full px-4 py-2 border rounded-md'
+            >
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
