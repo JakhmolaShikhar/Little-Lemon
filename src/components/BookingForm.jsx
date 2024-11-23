@@ -23,8 +23,14 @@ const BookingForm = () => {
                 <option>21:00</option>
                 <option>22:00</option>
             </select>
-            <label htmlFor="guests" className='block text-sm font-medium mb-1'>Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" />
+            <div className='relative'>
+                <label htmlFor="guests" className='block text-sm font-medium mb-1'>
+                    Number of guests
+                </label>
+                <div>
+                    <input type="number" placeholder="1" min="1" max="10" id="guests" />
+                </div>
+            </div>
             <label htmlFor="occasion">Occasion</label>
             <select 
             id="occasion"
