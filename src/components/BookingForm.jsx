@@ -1,10 +1,25 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 
 const BookingForm = () => {
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventdefault();
+        setSubmitted(true);
+    }
+
+    const handleChange = (e) => {
+
+    }
   
     return (
-    <div>
+    <div className='max-w-2xl mx-auto p-6'>
+        <div className='mb-6 text-center'>
+            <h1 className='text-3xl font-bold mb-2'>Reserve a Table</h1>
+            <p className='text-lg '>Little Lemon Restaurant</p>
+        </div>
         <form className='space-y-6'>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" />
@@ -27,8 +42,17 @@ const BookingForm = () => {
                 <label htmlFor="guests" className='block text-sm font-medium mb-1'>
                     Number of guests
                 </label>
-                <div>
-                    <input type="number" placeholder="1" min="1" max="10" id="guests" />
+                <div className='relative'>
+                    <select 
+                    type="number" 
+                    placeholder="1"
+                    className='w-full px-4 py-2 border rounded-md'
+                    
+                    >
+                        {[1,2,3,4,5,6,7,8,9,10].map(num => (
+                            <option key={num} value={num}>{num} {num ===1 ? 'Guest' : 'Guests'}</option>
+                        ))}
+                    </select>
                 </div>
             </div>
             <label htmlFor="occasion">Occasion</label>
@@ -39,7 +63,14 @@ const BookingForm = () => {
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
-            <input type="submit" value="Make Your reservation" />
+            
+            <div>
+                <button
+                type='submit'
+                className='w-full bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-md transition duration-200'>
+                    Reserve Table
+                </button>
+            </div>
         </form>
     </div>
   )
