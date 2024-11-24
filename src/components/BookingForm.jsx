@@ -54,13 +54,15 @@ const BookingForm = () => {
                     <Clock className='absolute right-3 top-2.5 h-5 w-5' />
                 </div>
             </div>
+
             <div className='relative'>
                 <label htmlFor="guests" className='block text-sm font-medium mb-1'>
                     Number of guests
                 </label>
                 <div className='relative'>
                     <select 
-                    type="number" 
+                    type="guests" 
+                    required
                     placeholder="1"
                     className='w-full px-4 py-2 border rounded-md'
                     value={formData.guests}
@@ -73,14 +75,20 @@ const BookingForm = () => {
                     <Users className='absolute right-3 toop-2.5 h-5 w-5 text-gray-400' />
                 </div>
             </div>
-            <label htmlFor="occasion">Occasion</label>
-            <select 
-            id="occasion"
-            className='w-full px-4 py-2 border rounded-md'
-            >
-                <option>Birthday</option>
-                <option>Anniversary</option>
-            </select>
+            <div>
+                <label htmlFor="occasion" className='block text-sm font-medium mb-1'>Occasion</label>
+                <select 
+                id="occasion"
+                className='w-full px-4 py-2 border rounded-md'
+                value={formData.occasion}
+                onChange={handleChange}
+                >
+                    <option value='standard'>Standard Dining</option>
+                    <option value='birthday'>Birthday</option>
+                    <option value='anniversary'>Anniversary</option>
+                    <option value='business'>Business Meal</option>
+                </select>
+            </div>
 
             <div>
                 <button
