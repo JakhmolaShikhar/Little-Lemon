@@ -32,9 +32,14 @@ const BookingForm = () => {
             <p className='text-lg '>Little Lemon Restaurant</p>
         </div>
         <form className='space-y-6' onSubmit={handleSubmit}>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'></div>
-            <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" />
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='relative'>
+                    <label htmlFor="res-date" className='block text-sm font-medium mb-1'>
+                        Choose date
+                    </label>
+                    <input type="date" id="res-date" />
+                </div>
+            </div>
             
             
             <div className='relative'>
@@ -43,7 +48,7 @@ const BookingForm = () => {
                 </label>
                 <div className='relative'>
                     <select 
-                    id="res-time"
+                    name='time'
                     required
                     className='w-full px-4 py-2 border rounded-md'
                     value={formData.time}
