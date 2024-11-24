@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import { Users } from 'lucide-react'
+import { Clock, Users } from 'lucide-react'
 
 const BookingForm = () => {
 
-    const [formdata, setFormData] = useState({
+    const [formData, setFormData] = useState({
         date: '',
         time: '',
         guests: '2',
@@ -19,7 +19,7 @@ const BookingForm = () => {
     }
 
     const handleChange = (e) => {
-        setFormData({...formdata, [e.target.name]: e.target.value})
+        setFormData({...formData, [e.target.name]: e.target.value})
     }
   
     return (
@@ -31,21 +31,29 @@ const BookingForm = () => {
         <form className='space-y-6' onSubmit={handleSubmit}>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" />
-            <label htmlFor="res-time">Choose time</label>
-            <select 
-            id="res-time"
-            required
-            className='w-full px-4 py-2 border rounded-md'
-            value={''}
-            >
-                <option value=''>Select time</option>
-                <option>17:00</option>
-                <option>18:00</option>
-                <option>19:00</option>
-                <option>20:00</option>
-                <option>21:00</option>
-                <option>22:00</option>
-            </select>
+            <div className='relative'>
+                <label htmlFor="res-time" className='block text-sm font-medium mb-1'>
+                    Choose time
+                </label>
+                <div className='relative'>
+                    <select 
+                    id="res-time"
+                    required
+                    className='w-full px-4 py-2 border rounded-md'
+                    value={formData.time}
+                    onChange={handleChange}
+                    >
+                        <option value=''>Select time</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                    </select>
+                    <Clock className='absolute right-3 top-2.5 h-5 w-5' />
+                </div>
+            </div>
             <div className='relative'>
                 <label htmlFor="guests" className='block text-sm font-medium mb-1'>
                     Number of guests
@@ -55,7 +63,7 @@ const BookingForm = () => {
                     type="number" 
                     placeholder="1"
                     className='w-full px-4 py-2 border rounded-md'
-                    value={formdata.guests}
+                    value={formData.guests}
                     onChange={handleChange}
                     >
                         {[1,2,3,4,5,6,7,8,9,10].map(num => (
