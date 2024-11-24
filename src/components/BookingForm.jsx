@@ -1,7 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import { Users } from 'lucide-react'
 
 const BookingForm = () => {
+
+    const [formdata, setFormData] = useState({
+        date: '',
+        time: '',
+        guests: '2',
+        occasion: 'standard',
+    })
 
     const [submitted, setSubmitted] = useState(false);
 
@@ -11,7 +19,7 @@ const BookingForm = () => {
     }
 
     const handleChange = (e) => {
-
+        setFormData({...formdata, [e.target.name]: e.target.value})
     }
   
     return (
@@ -20,7 +28,7 @@ const BookingForm = () => {
             <h1 className='text-3xl font-bold mb-2'>Reserve a Table</h1>
             <p className='text-lg '>Little Lemon Restaurant</p>
         </div>
-        <form className='space-y-6'>
+        <form className='space-y-6' onSubmit={handleSubmit}>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" />
             <label htmlFor="res-time">Choose time</label>
@@ -47,12 +55,14 @@ const BookingForm = () => {
                     type="number" 
                     placeholder="1"
                     className='w-full px-4 py-2 border rounded-md'
-                    
+                    value={formdata.guests}
+                    onChange={handleChange}
                     >
                         {[1,2,3,4,5,6,7,8,9,10].map(num => (
                             <option key={num} value={num}>{num} {num ===1 ? 'Guest' : 'Guests'}</option>
                         ))}
                     </select>
+                    <Users className='absolute right-3 toop-2.5 h-5 w-5 text-gray-400' />
                 </div>
             </div>
             <label htmlFor="occasion">Occasion</label>
@@ -63,7 +73,7 @@ const BookingForm = () => {
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
-            
+
             <div>
                 <button
                 type='submit'
