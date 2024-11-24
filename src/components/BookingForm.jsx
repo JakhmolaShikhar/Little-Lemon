@@ -9,6 +9,9 @@ const BookingForm = () => {
         time: '',
         guests: '2',
         occasion: 'standard',
+        name: '',
+        email: '',
+        phone: '',
     })
 
     const [submitted, setSubmitted] = useState(false);
@@ -29,8 +32,11 @@ const BookingForm = () => {
             <p className='text-lg '>Little Lemon Restaurant</p>
         </div>
         <form className='space-y-6' onSubmit={handleSubmit}>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'></div>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" />
+            
+            
             <div className='relative'>
                 <label htmlFor="res-time" className='block text-sm font-medium mb-1'>
                     Choose time
@@ -88,6 +94,45 @@ const BookingForm = () => {
                     <option value='anniversary'>Anniversary</option>
                     <option value='business'>Business Meal</option>
                 </select>
+            </div>
+            <div className='md:col-span-2'>
+                <label className='block text-sm font-medium mb-1'>
+                    Name
+                </label>
+                <input 
+                type='text'
+                required
+                className='w-full px-4 py-2 border rounded-md'
+                value={formData.name}
+                onChange={handleChange}
+                placeholder='Your full name'
+                />
+            </div>
+            <div className='md:col-span-2'>
+                <label className='block text-sm font-medium mb-1'>
+                    Email
+                </label>
+                <input 
+                type='email'
+                required
+                className='w-full px-4 py-2 border rounded-md'
+                value={formData.email}
+                onChange={handleChange}
+                placeholder='Your@email.com'
+                />
+            </div>
+            <div className='md:col-span-2'>
+                <label className='block text-sm font-medium mb-1'>
+                    Phone
+                </label>
+                <input 
+                type='tel'
+                required
+                className='w-full px-4 py-2 border rounded-md'
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder='(123) 456-7890'
+                />
             </div>
 
             <div>
