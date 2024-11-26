@@ -37,7 +37,15 @@ const BookingForm = () => {
                     <label htmlFor="res-date" className='block text-sm font-medium mb-1'>
                         Choose date
                     </label>
-                    <input type="date" id="res-date" />
+                    <input 
+                    type="date" 
+                    id="res-date"
+                    required
+                    className='w-full px-4 py-2 border rounded-md'
+                    value={formData.date}
+                    onChange={handleChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    />
                 </div>
             </div>
             
@@ -50,17 +58,17 @@ const BookingForm = () => {
                     <select 
                     name='time'
                     required
-                    className='w-full px-4 py-2 border rounded-md'
+                    className='w-full px-4 py-2 border rounded-md appearance-none'
                     value={formData.time}
                     onChange={handleChange}
                     >
                         <option value=''>Select time</option>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
-                        <option>21:00</option>
-                        <option>22:00</option>
+                        <option value='17:00'>17:00</option>
+                        <option value='18:00'>18:00</option>
+                        <option value='19:00'>19:00</option>
+                        <option value='20:00'>20:00</option>
+                        <option value='21:00'>21:00</option>
+                        <option value='22:00'>22:00</option>
                     </select>
                     <Clock className='absolute right-3 top-2.5 h-5 w-5' />
                 </div>
@@ -75,7 +83,7 @@ const BookingForm = () => {
                     type="guests" 
                     required
                     placeholder="1"
-                    className='w-full px-4 py-2 border rounded-md'
+                    className='w-full px-4 py-2 border rounded-md appearance-none'
                     value={formData.guests}
                     onChange={handleChange}
                     >
@@ -83,14 +91,14 @@ const BookingForm = () => {
                             <option key={num} value={num}>{num} {num ===1 ? 'Guest' : 'Guests'}</option>
                         ))}
                     </select>
-                    <Users className='absolute right-3 toop-2.5 h-5 w-5 text-gray-400' />
+                    <Users className='absolute right-3 top-2.5 h-5 w-5 text-gray-400' />
                 </div>
             </div>
             <div>
                 <label htmlFor="occasion" className='block text-sm font-medium mb-1'>Occasion</label>
                 <select 
                 id="occasion"
-                className='w-full px-4 py-2 border rounded-md'
+                className='w-full px-4 py-2 border rounded-md appearance-none'
                 value={formData.occasion}
                 onChange={handleChange}
                 >
