@@ -24,6 +24,7 @@ const Menu = () => {
 			price: 12.99,
 			category: 'starters',
 			special: true,
+			image: '/img/menu_items/Greek salad.jpg',
 		},
 		{
 			id: 2,
@@ -31,6 +32,7 @@ const Menu = () => {
 			description: 'Grilled bread with tomatoes, garlic, and fresh basil',
 			price: 9.99,
 			category: 'starters',
+			image: '/img/menu_items/Bruschetta.jpg',
 		},
 		{
 			id: 3,
@@ -39,6 +41,7 @@ const Menu = () => {
 			price: 25.99,
 			category: 'mains',
 			special: true,
+			image: '/img/menu_items/Grilled fish.jpg',
 		},
 		{
 			id: 4,
@@ -46,6 +49,7 @@ const Menu = () => {
 			description: 'Traditional Italian lemon cake with vanilla ice cream',
 			price: 8.99,
 			category: 'desserts',
+			image: '/img/menu_items/Lemon dessert.jpg',
 		},
 	]
 
@@ -95,7 +99,7 @@ const Menu = () => {
 				>
 					<div className='aspect-w-16 aspect-h-9 bg-gray-200'>
 						<img 
-						src='/api/placeholder/400/225'
+						src={item.image}
 						alt={item.name}
 						className='object-cover w-full h-full'
 						/>

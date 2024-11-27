@@ -21,7 +21,7 @@ const Navbar = () => {
         <meta name='og:description' content='' />
         <meta name='og:image' content='./assets/Logo.svg' /> */
       }
-      <div className='container mx-auto px-4 py-2 flex justify-between items-center'>
+      <div className='container mx-auto px-4 py-2 flex justify-between items-end text-right'>
         <ul className='flex space-x-4'>
           <li>
             <Link 
