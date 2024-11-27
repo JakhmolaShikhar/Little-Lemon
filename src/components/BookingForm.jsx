@@ -28,32 +28,29 @@ const BookingForm = () => {
     return (
     <div className='max-w-2xl mx-auto p-6'>
         <div className='mb-6 text-center'>
-            <h1 className='text-3xl font-bold mb-2'>Reserve a Table</h1>
+            <h1 className='text-4xl font-bold mb-2'>Reserve a Table</h1>
             <p className='text-lg '>Little Lemon Restaurant</p>
         </div>
         { submitted ? (
         <p className=''>Thanks for reserving a table.</p>) : (
-             <form className='space-y-6' onSubmit={handleSubmit}>
-             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                <div className='relative'>
-                <label htmlFor="res-date" className='block text-sm font-medium mb-1'>
-                    Choose date
-                </label>
-                    <div className='relative'>
-                        <input 
-                        type="date" 
-                        name='date'
-                        required
-                        className='w-full px-4 py-2 border rounded-md '
-                        value={formData.date}
-                        onChange={handleChange}
-                        min={new Date().toISOString().split("T")[0]}
-                        />
-                    </div>
+            <form className='space-y-6' onSubmit={handleSubmit}>
+            <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='relative w-full'>
+                    <label htmlFor="res-date" className='block text-sm font-medium mb-1'>
+                        Choose date
+                    </label>
+                    <input 
+                    type="date" 
+                    name='date'
+                    required
+                    className='w-full px-4 py-2 border rounded-md '
+                    value={formData.date}
+                    onChange={handleChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    />
                 </div>
             </div>
-             
-             
+              
             <div className='relative'>
                 <label htmlFor="res-time" className='block text-sm font-medium mb-1'>
                     Choose time

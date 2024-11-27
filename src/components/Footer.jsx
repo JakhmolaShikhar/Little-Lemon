@@ -10,7 +10,8 @@ const Footer = () => {
         <div className='container mx-auto px-4'>
           <img 
           src='/img/menu_items/logo-white.png'
-          className='w-4 h-auto mx-auto min-w-20 items-start' 
+          alt='little lemon footer logo'
+          className='w-4 h-auto mx-auto min-w-20 items-start m-2' 
           />
           <p className='text-center mb-4'>Copyright &copy; { date.getFullYear() } Little Lemon. All rights reserved.</p>
           <nav>
