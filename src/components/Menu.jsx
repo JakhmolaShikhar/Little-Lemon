@@ -49,15 +49,16 @@ const Menu = () => {
 			description: 'Traditional Italian lemon cake with vanilla ice cream',
 			price: 8.99,
 			category: 'desserts',
+			special: true,
 			image: '/img/menu_items/Lemon dessert.jpg',
 		},
 		{
 			id: 5,
 			name: 'Pasta',
-			description: 'Traditional Italian lemon cake with vanilla ice cream',
+			description: 'Pumpkin and Vodka sauce creamy penne pasta',
 			price: 19.99,
 			category: 'mains',
-			image: '/img/menu_items/Lemon dessert.jpg',
+			image: '/img/pasta.jpg',
 		},
 	]
 
