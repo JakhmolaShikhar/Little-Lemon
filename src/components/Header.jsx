@@ -4,7 +4,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-      <img src="/img/logo.png" alt='Little lemon logo' />
+      <img src="/img/menu_items/logo.png" alt='Little lemon logo' />
     </div>
   )
 }

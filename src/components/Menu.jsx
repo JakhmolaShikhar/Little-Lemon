@@ -38,10 +38,10 @@ const Menu = () => {
 			id: 3,
 			name: 'Grilled Fish',
 			description: 'Mediterranean-style grilled fish with lemon and herbs',
-			price: 25.99,
+			price: 24.99,
 			category: 'mains',
 			special: true,
-			image: '/img/menu_items/Grilled fish.jpg',
+			image: '/img/Grilled fish B.jpg',
 		},
 		{
 			id: 4,
@@ -49,6 +49,14 @@ const Menu = () => {
 			description: 'Traditional Italian lemon cake with vanilla ice cream',
 			price: 8.99,
 			category: 'desserts',
+			image: '/img/menu_items/Lemon dessert.jpg',
+		},
+		{
+			id: 5,
+			name: 'Pasta',
+			description: 'Traditional Italian lemon cake with vanilla ice cream',
+			price: 19.99,
+			category: 'mains',
 			image: '/img/menu_items/Lemon dessert.jpg',
 		},
 	]
