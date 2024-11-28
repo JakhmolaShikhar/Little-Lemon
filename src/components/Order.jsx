@@ -6,6 +6,49 @@ const Order = () => {
 	const [cart, setCart] = useState([]);
 	const [showCart, setShowCart] = useState(false);
 
+	const categories = [
+		{ id: 'starters', name: 'Starters' },
+		{ id: 'mains', name: 'Main Dishes' },
+		{ id: 'sides', name: 'Sides' },
+		{ id: 'desserts', name: 'Desserts' },
+		{ id: 'drinks', name: 'Drinks' }
+	  ];
+	
+	  const menuItems = [
+		{
+		  id: 1,
+		  name: 'Greek Salad',
+		  description: 'Fresh vegetables, olives, and feta cheese',
+		  price: 12.99,
+		  category: 'starters',
+		  image: '/api/placeholder/200/200'
+		},
+		{
+		  id: 2,
+		  name: 'Grilled Fish',
+		  description: 'Mediterranean-style grilled fish with lemon',
+		  price: 25.99,
+		  category: 'mains',
+		  image: '/api/placeholder/200/200'
+		},
+		{
+		  id: 3,
+		  name: 'Bruschetta',
+		  description: 'Grilled bread with tomatoes and herbs',
+		  price: 9.99,
+		  category: 'starters',
+		  image: '/api/placeholder/200/200'
+		},
+		{
+		  id: 4,
+		  name: 'Lemon Dessert',
+		  description: 'Traditional Italian lemon cake',
+		  price: 8.99,
+		  category: 'desserts',
+		  image: '/api/placeholder/200/200'
+		}
+	  ];
+
 	const addCart = (item) => {
 		const existingItem = cart.find(cartItem => cartItem.id === item.id);
 		if(existingItem){

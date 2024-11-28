@@ -32,7 +32,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-            to='/about' 
+            to='#about' 
             onClick={scrollDown}
             className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               About
