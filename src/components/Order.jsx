@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
-import { ShoppingCart, Minus, Plus, X } from 'lucide-react';
+import React, { useState, useMemo } from 'react'
+import { Filter, ShoppingCart, Minus, Plus, X } from 'lucide-react';
 
 const Order = () => {
 	const [cart, setCart] = useState([]);
 	const [showCart, setShowCart] = useState(false);
+	const [selectedCategory, setSelectedCategory] = useState(null);
+  	const [searchTerm, setSearchTerm] = useState('');
 
 	const categories = [
 		{ id: 'starters', name: 'Starters' },
@@ -86,8 +88,33 @@ const Order = () => {
 		return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 	}
 
+	const filteredMenuItems = useMemo(() => {
+		return menuItems.filter(item => 
+		  (selectedCategory ? item.category === selectedCategory : true) &&
+		  item.name.toLowerCase().includes(searchTerm.toLowerCase())
+		);
+	  }, [selectedCategory, searchTerm]);
+
   return (
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-2'>
+
+		<div className='flex items-center space-x-4 mb-8'>
+			<div className='relative flex-grow'>
+			<input 
+				type='text'
+				placeholder='Search menu items...'
+				value={searchTerm}
+				onChange={(e) => setSearchTerm(e.target.value)}
+				className='w-full px-4 py-2 border rounded-md pl-10'
+			/>
+			<Filter 
+				className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' 
+				size={20} 
+			/>
+			</div>
+		</div>
+
+
 		<button 
 		onClick={() => setShowCart(true)}
 		className='fixed bottom-4 right-4 bg-yellow-400 text-white p-4 rounded-full'
@@ -187,8 +214,13 @@ const Order = () => {
 
         {/* Menu Items */}
         <div className="md:col-span-2 lg:col-span-3">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {menuItems.map(item => (
+			{filteredMenuItems.length === 0 ? (
+				<div className='text-center py-8'>
+					No items found
+				</div>
+			) : (
+          	<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredMenuItems.map(item => (
               <div key={item.id} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                 <img
                   src={item.image}
@@ -211,6 +243,7 @@ const Order = () => {
               </div>
             ))}
           </div>
+		  )}
         </div>
       </div>
 	</div>

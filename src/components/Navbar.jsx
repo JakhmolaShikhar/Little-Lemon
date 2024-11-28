@@ -32,14 +32,6 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-            to='#about' 
-            onClick={scrollDown}
-            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link 
             to='/reservation' 
             className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               Reservations
@@ -50,13 +42,6 @@ const Navbar = () => {
             to='/order' 
             className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
               Order Online
-            </Link>
-          </li>
-          <li>
-            <Link 
-            to='/login' 
-            className='text-gray-700 hover:bg-gray-100 rounded-full px-2 py-2 hover:text-yellow-400 transition duration-200'>
-              Login
             </Link>
           </li>
         </ul>
